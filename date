@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Date?</title>
+<style>
+body {
+font-family: 'Arial', sans-serif;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+background-color: #fdf6ec;
+text-align: center;
+}
+h1 { color: #6f4e37; font-size: 2.5rem; }
+.buttons { display: flex; gap: 20px; margin-top: 30px; position: relative; }
+button {
+padding: 15px 30px;
+font-size: 1.2rem;
+border: none;
+border-radius: 25px;
+cursor: pointer;
+transition: transform 0.2s;
+}
+#yesBtn { background-color: #8b5a2b; color: white; }
+#noBtn { background-color: #e06d6d; color: white; position: absolute; left: 140px; }
+</style>
+</head>
+<body>
+<h1>Coffee? ☕️ You, me, and a good conversation.</h1>
+<div class="buttons">
+<button id="yesBtn" onclick="sayYes()">Count me in!</button>
+<button id="noBtn" onmouseover="moveButton()">I'm busy</button>
+</div>
+<script>
+function sayYes() {
+alert("Awesome! ❤️ I'm really looking forward to it. Let's details the time soon!"); }
+function moveButton() {
+const noBtn = document.getElementById('noBtn');
+// Generates a random position for the "No" button to jump to
+const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 100);
+const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 100);
+noBtn.style.position = 'absolute';
+noBtn.style.left = x + 'px';
+noBtn.style.top = y + 'px';
+}
+</script>
+</body>
+</html>
